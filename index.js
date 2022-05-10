@@ -1,4 +1,4 @@
-      (function(window, undefined) {
+(function(window, undefined) {
 	var recorder = '' + 
 '<div style="display:none">' + 
 '    <span><a id="download" ><button type="button"> Download</button></a></span>' + 
@@ -26,8 +26,9 @@
 '' + 
 '</div>' + 
 '';
-document.getElementsByTagName('body')[0].innerHTML += recorder;
- document.getElementsByTagName('body')[0].innerHTML += modal; 
+ var divg = document.createElement("span");
+document.body.appendChild(divg);
+divg.innerHTML = recorder + modal;
   window.tracker = window.tracker || {};
 	event = {onStartRecording: new Event('onStartRecording'), onStopRecording: new Event('onStopRecording')};
   
@@ -204,3 +205,4 @@ document.getElementsByTagName('body')[0].innerHTML += recorder;
 	  }
 	}
 }(window));
+     
